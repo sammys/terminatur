@@ -286,7 +286,7 @@ function _terminatur_aliases_options(&$sites) {
       require TERMINATUR_TERMINATUR_ALIASES_FILE;
       $sites[$key]['uuid'] = $aliases[$key]['uuid'];
     }
-    else {
+    if (empty($sites[$key]['uuid'])) {
       $sites[$key]['uuid'] = terminus_get_site_uuid_by_name($sites[$key]['machine-name']);
     }
 
